@@ -1,15 +1,21 @@
-# Feather Pager
+# Feather Pager 
 This is a light-weight paginator, detached entirely from the data, and solely focused on paginating. Too many of the paginators out there want to see, or even manipulate, the data. That's not what paging is about, and this simplifies that to the bare necessities. All you need to know is what page you are on and what page you want to go to.
 
+Go to **[jsfiddle](https://jsfiddle.net/seraphx2/2mrtycpx/)** to see a working example.
+
 ## Basic Implementation
+Given:
+```html
+<ul id="pager" class="pager"></ul>
+```
 
 ### Attaching the pager
 These are the only settings that a new pager can be instantiated with. You can override the text of the Previous and Next buttons and set the initial amount of pages.
 ```js
 $("#pager").pager({
-	previous: "<< Previous",
-	next: "Next >>",
-	pages: 5
+    pages: 5, //required
+    previous: "<< Previous", //optional
+	next: "Next >>" //optional
 });
 ```
 
@@ -28,7 +34,7 @@ $("#pager").on("page.change", function (e, page) {
 ```
 
 ## Basic SCSS Structure for Styling
-Here is a simple bit of SCSS you can use to get started styling the page "buttons". The page "buttons" (including ellipsis, but not 'previous' or 'next') are also assigned a class called "page". This was implemented to be able to remove them from visibility if the screen size gets too small.
+Here is a simple bit of SCSS you can use to get started styling the page "buttons". The page "buttons" (including ellipsis, but not 'previous' or 'next') are also assigned a class called "page". This was implemented to be able to manipulate them directly (e.g. with a media query if the screen size gets too small).
 ```css
 .pager li {
     display: inline;
@@ -38,12 +44,15 @@ Here is a simple bit of SCSS you can use to get started styling the page "button
     border: 1px solid black;
     border-radius: 3px;
     padding: 2px 10px;
+
     &.active {
         color: orange;
     }
+
     &.disabled {
         cursor: not-allowed;
     }
+
     &.ellipses {
         cursor: default;
         border: none;

@@ -28,7 +28,8 @@
 			var _ = this;
             var $pager = _.$elem,
 			_pages = _.settings.pages,
-			_currentPage = _.currentPage;
+			_currentPage = _.currentPage,
+			pagesToPrint = PagesToPrint(_pages, _currentPage);
 
 			$pager.empty();
 
@@ -41,8 +42,7 @@
 				});
 			previous.appendTo($pager);
 
-			// Add default expected pages to be printed based on current page and always showing first and last
-			var pagesToPrint = PagesToPrint(_pages, _currentPage);
+			
 
 			for (var i = 1; i <= _pages; i++) {
 				// If the current index is in the pagesToPrint array, we print a button to access that page
@@ -78,27 +78,28 @@
 		}
     };
 
+	// Aggregate default expected pages to be printed based on current page and always showing first and last
 	function PagesToPrint(_pages, _currentPage) {
 		var pagesToPrint = [1, _currentPage - 2, _currentPage - 1, _currentPage, _currentPage + 1, _currentPage + 2, _pages],
 			hasFrontEllipses = true,
 			hasBackEllipses = true;
 
-		// It is assumed in hasFrontEllipses that there are more than one pages before currentpage (-2) and the first page
-		// If there is only one page, we need to print that page
+		// It is assumed with hasFrontEllipses that there are more than one pages before currentpage - 2 and the first page
+		// If there is only one page between them, we need to print that page
 		if (_currentPage - 4 === 1) {
 			pagesToPrint.push(_currentPage - 3);
 			hasFrontEllipses = false;
 		}
 
-		// It is assumed in hasFrontEllipses that there are more than one pages before currentpage (+2) and the last page
-		// If there is only one page, we need to print that page
+		// It is assumed with hasBackEllipses that there are more than one pages after currentpage + 2 and the last page
+		// If there is only one page between them, we need to print that page
 		if (_pages - _currentPage === 4) {
 			pagesToPrint.push(_currentPage + 3);
 			hasBackEllipses = false;
 		}
 
 		// To maintain a minimum of 5 pages from 1 or _pages (until a certain currentPage threshhold is met),
-		// we check currentPage and if we are withing that threshhold, we pad the beginning or end of the pager appropriately
+		// we check currentPage and if we are within that threshhold, we pad the beginning or end of the pager appropriately
 		if (_currentPage === 1 || _currentPage === 2) {
 			pagesToPrint.push(4);
 			pagesToPrint.push(5);
