@@ -25,8 +25,8 @@
 			this.$elem.trigger("page.change", this.currentPage);
 		},
         render: function() {
-			var _ = this;
-            var $pager = _.$elem,
+			var _ = this,
+			$pager = _.$elem,
 			_pages = _.settings.pages,
 			_currentPage = _.currentPage,
 			pagesToPrint = PagesToPrint(_pages, _currentPage);
@@ -42,9 +42,7 @@
 				});
 			previous.appendTo($pager);
 
-			
-
-			for (var i = 1; i <= _pages; i++) {
+			for (var i = 1; i <= _pages; i++)
 				// If the current index is in the pagesToPrint array, we print a button to access that page
 				if (pagesToPrint.list.indexOf(i) > -1) {
 					var page = $("<li />").text(i).addClass("page").data("page", i).on("click", function() {
@@ -56,17 +54,16 @@
 
 					page.appendTo($pager);
 
-					// We also check to see if we have the Ellipses set and if we are on index 2 or one less _pages,
-					// we print an ellipses in that place
+				// We also check to see if we have the Ellipses set and if we are on index 2 or one less _pages,
+				// we print an ellipses in that place
 				} else if ((i === 2 && pagesToPrint.hasFrontEllipses) || (i === _pages - 1 && pagesToPrint.hasBackEllipses)) {
 					$("<li />").text("...").addClass("ellipses page").appendTo($pager);
 				}
-			}
 
 			// Create next button
 			// Also determine if it's enabled (is there enough numbers for it to be needed or are you on the last page already)
 			var next = $("<li />").text(_.settings.next).addClass("disabled");
-			if (_currentPage !== _pages) //canClick
+			if (_currentPage !== _pages)
 				next.removeClass("disabled").on("click", function() {
 					_.next();
 				});
