@@ -1,7 +1,7 @@
 # Feather Pager - A jQuery plugin
 This is a light-weight jQuery-dependent paginator, detached entirely from the data, and solely focused on paginating. Too many of the paginators out there want to see, or even manipulate, the data. That's not what paging is about, and this simplifies that to the bare necessities. All you need to know is what page you are on and what page you want to go to.
 
-Go to **[jsfiddle](https://jsfiddle.net/seraphx2/b7kv8g9a/)** to see a working example.
+Go to **[jsfiddle](https://jsfiddle.net/seraphx2/uthcL31u/)** to see a working example.
 
 ## Package Availability
 ### Yarn
