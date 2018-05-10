@@ -42,9 +42,7 @@ $("#pager").on("page.change", function (e, page) {
 ```
 
 ## Basic SCSS Structure for Styling
-NOTE: A class named `page` is automatically added to the pagination container for css targeting purposes.
-
-Here is a simple bit of SCSS you can use to get started styling the page "buttons". The page "buttons" (including ellipsis, but not 'previous' or 'next') are also assigned a class called "page". This was implemented to be able to manipulate them directly (e.g. with a media query if the screen size gets too small).
+Here is a simple bit of SCSS you can use to get started styling the page "buttons". The page "buttons" (including ellipsis, but not 'previous' or 'next') are also assigned a class called `page`. This was implemented to be able to manipulate them directly (e.g. with a media query if the screen size gets too small).
 ```css
 .pager li {
     display: inline;
