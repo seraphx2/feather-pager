@@ -16,13 +16,13 @@ $("#pager").pager({
 ### Updating the Page count
 In some cases you may want to update the page count and can do so with this method:
 ```js
-$("#pager1").pager("setPages", 15);
+$("#pager").pager("setPages", 15);
 ```
 
 ### Knowing which Page the User selected
-All you need to know from the pager is which page the user wants to see. How many records per page, or any other data relevant to retrieve the data from the server is not needed to be known by the pager.
+All you need to know from the pager is which page the user wants to see. How many records per page, or any other data relevant to retrieve the data from the server is not needed to be known by the pager. This event is raised everytime a page is navigated to in the pager and it simply returns the page number that was selected.
 ```js
-$("#pager1").on("page.change", function (e, page) {
+$("#pager").on("page.change", function (e, page) {
 	//Run ajax/fetch call to retrieve data.
 });
 ```

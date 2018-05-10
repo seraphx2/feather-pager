@@ -1,7 +1,7 @@
 {
   "name": "feather-pager",
   "version": "1.0.0",
-  "description": "This is a simple paginator, detached entirely from the data, and solely focused on paginating.",
+  "description": "This is a light-weight paginator, detached entirely from the data, and solely focused on paginating.",
   "keywords": [
     "paging",
     "pager",
