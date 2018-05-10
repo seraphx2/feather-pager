@@ -5,9 +5,9 @@ Go to **[jsfiddle](https://jsfiddle.net/seraphx2/b7kv8g9a/)** to see a working e
 
 ## Package Availability
 ### Yarn
-```
-$ yarn add feather-pager
-```
+`$ yarn add feather-pager`
+### NPM
+`$ npm i feather-pager`
 ### CDN
 `https://cdn.jsdelivr.net/npm/feather-pager/src/jquery.feather-pager.min.js`
 
