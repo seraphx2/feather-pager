@@ -3,6 +3,11 @@ This is a light-weight paginator, detached entirely from the data, and solely fo
 
 Go to **[jsfiddle](https://jsfiddle.net/seraphx2/890L9jw2/)** to see a working example.
 
+## Available from Yarn
+```
+$ yarn add feather-pager
+```
+
 ## Basic Implementation
 Given:
 ```html
