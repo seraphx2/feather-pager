@@ -1,12 +1,12 @@
 # Feather Pager 
 This is a light-weight paginator, detached entirely from the data, and solely focused on paginating. Too many of the paginators out there want to see, or even manipulate, the data. That's not what paging is about, and this simplifies that to the bare necessities. All you need to know is what page you are on and what page you want to go to.
 
-Go to **[jsfiddle](https://jsfiddle.net/seraphx2/2mrtycpx/)** to see a working example.
+Go to **[jsfiddle](https://jsfiddle.net/seraphx2/890L9jw2/)** to see a working example.
 
 ## Basic Implementation
 Given:
 ```html
-<ul id="pager" class="pager"></ul>
+<ul id="pager"></ul>
 ```
 
 ### Attaching the pager
@@ -34,6 +34,8 @@ $("#pager").on("page.change", function (e, page) {
 ```
 
 ## Basic SCSS Structure for Styling
+NOTE: A class named `page` is automatically added to the pagination container for css targeting purposes.
+
 Here is a simple bit of SCSS you can use to get started styling the page "buttons". The page "buttons" (including ellipsis, but not 'previous' or 'next') are also assigned a class called "page". This was implemented to be able to manipulate them directly (e.g. with a media query if the screen size gets too small).
 ```css
 .pager li {
