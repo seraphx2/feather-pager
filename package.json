@@ -2,7 +2,12 @@
   "name": "feather-pager",
   "version": "1.0.0",
   "description": "This is a simple paginator, detached entirely from the data, and solely focused on paginating.",
-  "keywords": ["paging", "pager", "pagination", "paginate"],
+  "keywords": [
+    "paging",
+    "pager",
+    "pagination",
+    "paginate"
+  ],
   "main": "jquery.feather-pager.js",
   "repository": {
     "url": "https://github.com/seraphx2/feather-pager",
@@ -10,5 +15,12 @@
   },
   "author": "Robert Burke <robmburke@outlook.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
 }
